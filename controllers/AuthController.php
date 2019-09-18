@@ -28,7 +28,8 @@ class AuthController extends Controller
         	date_default_timezone_set('Asia/Jakarta');
 
             // get request
-            $request = Yii::$app->request;
+            $request  = Yii::$app->request;
+            $req_data = '';
 
             if ($request->isGet){
 
@@ -44,7 +45,11 @@ class AuthController extends Controller
 
             }else if($request->isPut){
 
-                $req_data = json_decode(file_get_contents('php://input'), true);  
+                $req_data = json_decode(file_get_contents('php://input'), true);
+
+                if(empty($req_data)){
+                    $req_data = Yii::$app->request->bodyParams;
+                }
 
             }
 

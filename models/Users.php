@@ -37,6 +37,7 @@ class Users extends \yii\db\ActiveRecord
             [['last_login', 'created_date', 'updated_date'], 'safe'],
             [['name', 'username', 'email'], 'string', 'max' => 100],
             [['password'], 'string', 'max' => 255],
+            [['username'], 'unique'],
         ];
     }
 
