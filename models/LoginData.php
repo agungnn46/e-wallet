@@ -9,15 +9,13 @@ use app\models\AppSession;
 
 class LoginData extends Model
 {
-    public $user_id;
     public $username;
     public $password;
 
     public function rules()
     {
         return [
-            [['username', 'password'], 'required', 'on' => 'login'],
-            [['user_id'], 'required', 'on' => 'logout']
+            [['username', 'password'], 'required', 'on' => 'login']
         ];
     }
 
@@ -25,14 +23,15 @@ class LoginData extends Model
     {
         // set session
         $app_session         = new AppSession();
-        $app_session->id     = $data->id;
+        $app_session->id     = $data->access_token;
         $app_session->expire = strtotime('+1 day', time());
         $app_session->DATA   = 'username = '.$data->username;
         $app_session->save();
 
         $return_user = array(
-            'user_id' => $data->id,
-            'email'   => $data->email,
+            'name'         => $data->name,
+            'username'     => $data->username,
+            'access_token' => $data->access_token,
         );
 
         return $return_user;

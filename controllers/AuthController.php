@@ -15,6 +15,7 @@ class AuthController extends Controller
 	public $enableCsrfValidation = false;
     
     public $dataReq;
+    public $access_token;
 	public $user;
     public $error_status = false;
     public $http_code    = 200;
@@ -47,36 +48,29 @@ class AuthController extends Controller
 
             }
 
-            $mdlRequest = new ParentRequest();
-
-            if($action->id != "login"){
-                $mdlRequest->scenario = 'all';
-            }
-
-            $mdlRequest->setAttributes($req_data);
-
-            // validate model request
-            if(!$mdlRequest->validate()){
-                $this->error_status = true;
-                $this->http_code    = 400;
-                $this->http_message = current($mdlRequest->getErrors())[0];
-                return parent::beforeAction($action);
-            }
-
             if($action->id != "login"){
 
-                // ===================== user validation ===================== //
-                $this->user = Users::find()->where(['id' => $mdlRequest->user_id])->one();
+                // =====================  access token validation ===================== //
+                $this->access_token = $request->headers->get('access-token');
 
-                if(!isset($this->user)){
+                if(empty($this->access_token)){
                     $this->error_status = true;
                     $this->http_code    = 401;
-                    $this->http_message = 'Invalid User Id';
+                    $this->http_message = 'Invalid Access Token';
                     return parent::beforeAction($action);
                 }
-                // ===================== user validation ===================== //
 
-                $check_session = AppSession::find()->where(['id' => $mdlRequest->user_id])->one(); 
+                $token_user = Users::find()->where(['access_token' => $this->access_token])->one();
+
+                if(empty($this->access_token)){
+                    $this->error_status = true;
+                    $this->http_code    = 401;
+                    $this->http_message = 'Invalid Access Token';
+                    return parent::beforeAction($action);
+                }
+                // =====================  access token validation ===================== //
+
+                $check_session = AppSession::find()->where(['id' => $this->access_token])->one(); 
 
                 if(!$check_session){
                     $this->error_status = true;
@@ -118,17 +112,5 @@ class AuthController extends Controller
 
             return $result;
         }
-    }
-}
-
-class ParentRequest extends Model
-{
-    public $user_id;
-
-    public function rules()
-    {
-        return [
-            [['user_id'], 'required', 'on' => 'all'],
-        ];
     }
 }

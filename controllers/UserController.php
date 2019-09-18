@@ -35,6 +35,7 @@ class UserController extends AuthController
                     return ServicesResponse::json(401, "Invalid Credential");
                 }
 
+                $user_data->access_token = Yii::$app->security->generateRandomString();
                 $user_data->last_login   = date("Y-m-d H:i:s");
                 $user_data->updated_date = date("Y-m-d H:i:s");
                 $user_data->save();
@@ -55,20 +56,16 @@ class UserController extends AuthController
     public function actionLogout(){
         if(!$this->error_status){
             try{
-                
-                $get_data           = new LoginData();
-                $get_data->scenario = 'logout';
-                $get_data->setAttributes($this->dataReq);
 
-                if(!$get_data->validate()){
-                    return ServicesResponse::json(400, "Invalid Parent Format : ".current($get_data->getErrors())[0]);
-                }
-
-                $check_session = AppSession::find()->where(['id' => $get_data->user_id])->one();
+                $check_session = AppSession::find()->where(['id' => $this->access_token])->one();
 
                 if(!empty($check_session)){
                     $check_session->delete();
                 }
+
+                $user_data               = Users::find()->where(['access_token' => $this->access_token])->one();
+                $user_data->access_token = NULL;
+                $user_data->save();
 
                 return ServicesResponse::json(200, "Success");
 
