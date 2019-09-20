@@ -19,6 +19,7 @@ class UserBalanceData extends Model
         return [
             [['id'], 'required', 'on' => 'get-by-id'],
             [['user_id', 'balance', 'balance_achieve'], 'required', 'on' => ['create', 'update']],
+            [['id', 'user_id', 'balance', 'balance_achieve'], 'integer']
         ];
     }
 

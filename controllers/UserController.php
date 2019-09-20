@@ -79,7 +79,7 @@ class UserController extends AuthController
         }
     }
 
-    public function actionGetUser()
+    public function actionGet()
     {
         if(!$this->error_status){
             try{

@@ -5,10 +5,10 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\UserBalanceData;
+use app\models\UserBalanceHistoryData;
 use app\components\ServicesResponse;
 
-class UserBalanceController extends AuthController
+class UserBalanceHistoryController extends AuthController
 {
 
     public function actionGet()
@@ -18,7 +18,7 @@ class UserBalanceController extends AuthController
 
                 if(!empty($this->dataReq)){
 
-                    $get_data           = new UserBalanceData();
+                    $get_data           = new UserBalanceHistoryData();
                     $get_data->scenario = 'get-by-id';
                     $get_data->setAttributes($this->dataReq);
 
@@ -28,9 +28,9 @@ class UserBalanceController extends AuthController
 
                 }
 
-                $data_user = UserBalanceData::getUserBalance($this->dataReq);
+                $history_data = UserBalanceHistoryData::getUserBalanceHistory($this->dataReq);
 
-                return ServicesResponse::json(200, "Success", $data_user);
+                return ServicesResponse::json(200, "Success", $history_data);
 
             } catch(\Exception $e){
 
@@ -44,7 +44,7 @@ class UserBalanceController extends AuthController
         if(!$this->error_status){
             try{
 
-                $get_data           = new UserBalanceData();
+                $get_data           = new UserBalanceHistoryData();
                 $get_data->scenario = 'create';
                 $get_data->setAttributes($this->dataReq);
 
@@ -52,10 +52,10 @@ class UserBalanceController extends AuthController
                     return ServicesResponse::json(400, "Invalid Parent Format : ".current($get_data->getErrors())[0]);
                 }
 
-                $data_user = UserBalanceData::createUserBalance($this->dataReq);
+                $history_data = UserBalanceHistoryData::createUserBalanceHistory($this->dataReq);
 
-                if($data_user['status'] == false){
-                    return ServicesResponse::json(500, $data_user['message']);
+                if($history_data['status'] == false){
+                    return ServicesResponse::json(500, $history_data['message']);
                 }else{
                     return ServicesResponse::json(200, "Success");
                 }
@@ -72,7 +72,7 @@ class UserBalanceController extends AuthController
         if(!$this->error_status){
             try{
 
-                $get_data           = new UserBalanceData();
+                $get_data           = new UserBalanceHistoryData();
                 $get_data->scenario = 'update';
                 $get_data->setAttributes($this->dataReq);
 
@@ -84,10 +84,10 @@ class UserBalanceController extends AuthController
                     return ServicesResponse::json(400, "Invalid Parent Format : ".current($get_data->getErrors())[0]);
                 }
                 
-                $data_user = UserBalanceData::updateUserBalance($this->dataReq, $id);
+                $history_data = UserBalanceHistoryData::updateUserBalanceHistory($this->dataReq, $id);
 
-                if($data_user['status'] == false){
-                    return ServicesResponse::json(500, $data_user['message']);
+                if($history_data['status'] == false){
+                    return ServicesResponse::json(500, $history_data['message']);
                 }else{
                     return ServicesResponse::json(204, "Success");
                 }
@@ -108,10 +108,10 @@ class UserBalanceController extends AuthController
                     return ServicesResponse::json(400, "Invalid Parent Format : ID cannot be blank");
                 }
                 
-                $data_user = UserBalanceData::deleteUserBalance($id);
+                $history_data = UserBalanceHistoryData::deleteUserBalance($id);
 
-                if($data_user['status'] == false){
-                    return ServicesResponse::json(500, $data_user['message']);
+                if($history_data['status'] == false){
+                    return ServicesResponse::json(500, $history_data['message']);
                 }else{
                     return ServicesResponse::json(200, "Success");
                 }
