@@ -74,15 +74,21 @@ class UserBalanceHistoryData extends Model
         $resp['message'] = '';
 
         $balance_history = UserBalanceHistory::find()->where(['id' => $id])->one();
-        $balance_history->setAttributes($data);
-        $balance_history->updated_date = date('Y-m-d H:i:s');
 
-        if(!$balance_history->validate()){
+        if(!empty($balance_history)){
+            $balance_history->setAttributes($data);
+            $balance_history->updated_date = date('Y-m-d H:i:s');
+
+            if(!$balance_history->validate()){
+                $resp['status']  = false;
+                $resp['message'] = current($balance_history->getErrors())[0];
+            }else{
+                $balance_history->save();
+            }
+        }else{
             $resp['status']  = false;
-            $resp['message'] = current($balance_history->getErrors())[0];
+            $resp['message'] = 'No Data Found';
         }
-
-        $balance_history->save();
 
         return $resp;
 

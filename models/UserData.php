@@ -95,15 +95,21 @@ class UserData extends Model
         $resp['message'] = '';
 
         $user = Users::find()->where(['id' => $id])->one();
-        $user->setAttributes($data);
-        $user->password = Yii::$app->getSecurity()->generatePasswordHash($data['password']);
 
-        if(!$user->validate()){
+        if(!empty($user)){
+            $user->setAttributes($data);
+            $user->password = Yii::$app->getSecurity()->generatePasswordHash($data['password']);
+
+            if(!$user->validate()){
+                $resp['status']  = false;
+                $resp['message'] = current($user->getErrors())[0];
+            }else{
+                $user->save();
+            }
+        }else{
             $resp['status']  = false;
-            $resp['message'] = current($user->getErrors())[0];
+            $resp['message'] = 'No Data Found';
         }
-
-        $user->save();
 
         return $resp;
 

@@ -65,15 +65,21 @@ class UserBalanceData extends Model
         $resp['message'] = '';
 
         $user_balance = UserBalance::find()->where(['id' => $id])->one();
-        $user_balance->setAttributes($data);
-        $user_balance->updated_date = date('Y-m-d H:i:s');
+        
+        if(!empty($user_balance)){
+            $user_balance->setAttributes($data);
+            $user_balance->updated_date = date('Y-m-d H:i:s');
 
-        if(!$user_balance->validate()){
+            if(!$user_balance->validate()){
+                $resp['status']  = false;
+                $resp['message'] = current($user_balance->getErrors())[0];
+            }else{
+                $user_balance->save();
+            }
+        }else{
             $resp['status']  = false;
-            $resp['message'] = current($user_balance->getErrors())[0];
+            $resp['message'] = 'No Data Found';
         }
-
-        $user_balance->save();
 
         return $resp;
 
