@@ -60,4 +60,4 @@ RUNNING
 -------
 
 ### Testing via Postman
-https://github.com/agungnn46/e-wallet/blob/master/readme-img/postman.PNG
+<img src="https://github.com/agungnn46/e-wallet/blob/master/readme-img/postman.PNG" />
