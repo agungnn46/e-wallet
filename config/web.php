@@ -48,7 +48,7 @@ $config = [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => ['user', 'user-balance', 'user-balance-history', 'balance-bank', 'balance-bank-history']],
+                ['class' => 'yii\rest\UrlRule', 'controller' => ['user', 'user-balance', 'user-balance-history', 'balance-bank', 'balance-bank-history', 'transaction']],
 
                 '/' => 'site/index',
 

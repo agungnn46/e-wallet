@@ -73,6 +73,8 @@ class AuthController extends Controller
                     $this->http_message = 'Invalid Access Token';
                     return parent::beforeAction($action);
                 }
+
+                $this->user = $token_user;
                 // =====================  access token validation ===================== //
 
                 $check_session = AppSession::find()->where(['id' => $this->access_token])->one(); 
