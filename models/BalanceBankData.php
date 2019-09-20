@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use app\models\Users;
 use app\models\BalanceBank;
+use app\models\BalanceBankHistory;
 
 class BalanceBankData extends Model
 {
@@ -97,6 +98,9 @@ class BalanceBankData extends Model
         $balance_bank = BalanceBank::find()->where(['id' => $id])->one();
 
         if($balance_bank){
+
+            BalanceBankHistory::deleteAll(['balance_bank_id' =>$id]);
+
             $balance_bank->delete();
         }else{
             $resp['status']  = false;

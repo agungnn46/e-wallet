@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use app\models\Users;
 use app\models\UserBalance;
+use app\models\UserBalanceHistory;
 
 class UserBalanceData extends Model
 {
@@ -93,6 +94,9 @@ class UserBalanceData extends Model
         $user_balance = UserBalance::find()->where(['id' => $id])->one();
 
         if($user_balance){
+
+            UserBalanceHistory::deleteAll(['user_balance_id' => $id]);
+
             $user_balance->delete();
         }else{
             $resp['status']  = false;
