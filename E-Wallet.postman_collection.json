@@ -1,0 +1,3052 @@
+{
+	"info": {
+		"_postman_id": "e79cf70a-ff80-4e76-8b46-25f8b7ecd0a1",
+		"name": "E-Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\" : \"user1\",\n\t\"password\" : \"susi\"\n}"
+						},
+						"url": {
+							"raw": "http://e-wallet.test/user/login",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"user1\",\n\t\"password\" : \"susi\"\n}"
+								},
+								"url": {
+									"raw": "http://e-wallet.test/user/login",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2019 06:12:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d81cae7f1a2a"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "1,110"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d81cae7f1a2a"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"code\": 200,\r\n    \"message\": \"Success\",\r\n    \"data\": {\r\n        \"name\": \"Susi Susanti\",\r\n        \"username\": \"user1\",\r\n        \"access_token\": \"vdWd01Fdq05ucijIbJvtFFjgtjz0W007\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "vdWd01Fdq05ucijIbJvtFFjgtjz0W007",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user/logout",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "vdWd01Fdq05ucijIbJvtFFjgtjz0W007",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user/logout",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2019 09:04:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d81f335d6b1c"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "487"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d81f335d6b1c"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user/get",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user/get-user",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user",
+										"get-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2019 09:40:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d81fb93ad576"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "126"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d81fb93ad576"
+								},
+								{
+									"key": "Content-Length",
+									"value": "330"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"user_id\": \"1\",\n            \"name\": \"Susi Susanti\",\n            \"username\": \"user1\",\n            \"email\": \"user1@gmail.com\",\n            \"access_token\": \"RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU\",\n            \"last_login\": \"2019-09-18 16:25:56\"\n        },\n        {\n            \"user_id\": \"2\",\n            \"name\": \"Ridwan Hanif\",\n            \"username\": \"user2\",\n            \"email\": \"user2@gmail.com\",\n            \"access_token\": null,\n            \"last_login\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user/get/1",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User By ID (No Data)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user/get-user?id=3",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user",
+										"get-user"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2019 10:20:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8204f517168"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "2,662"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8204f517168"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Get User By ID Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user/get-user",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user",
+										"get-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2019 09:40:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d81fb93ad576"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "126"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d81fb93ad576"
+								},
+								{
+									"key": "Content-Length",
+									"value": "330"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"code\": 200,\r\n    \"message\": \"Success\",\r\n    \"data\": {\r\n        \"user_id\": \"1\",\r\n        \"name\": \"Susi Susanti\",\r\n        \"username\": \"user1\",\r\n        \"email\": \"user1@gmail.com\",\r\n        \"access_token\": \"RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU\",\r\n        \"last_login\": \"2019-09-18 16:25:56\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Eko Santoso",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "email4@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "user12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://e-wallet.test/user/create",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Eko Santoso",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "user4",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "email4@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "user12345",
+											"type": "text"
+										},
+										{
+											"key": "confirm_password",
+											"value": "user12345",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://e-wallet.test/user/create",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Sep 2019 13:28:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8230f01ad2e"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "1,233"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8230f01ad2e"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Susi Suryani",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "susi1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "susi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "susi12345",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "susi12345",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/user/update/10",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user",
+								"update",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user/delete/4",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Balance",
+			"item": [
+				{
+					"name": "Get User Balance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user-balance/get",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Balance",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user-balance/get",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 09:01:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8343e18345e"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "242"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8343e18345e"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"balance\": 25000,\n            \"balance_achieve\": 100000,\n            \"created_date\": \"2019-09-19 11:47:46\",\n            \"updated_date\": \"2019-09-19 11:48:41\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 2,\n            \"balance\": 5000,\n            \"balance_achieve\": 100000000,\n            \"created_date\": \"2019-09-19 11:47:44\",\n            \"updated_date\": \"2019-09-19 11:32:53\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User Balance By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user-balance/get/2",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance",
+								"get",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Balance By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user-balance/get/2",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance",
+										"get",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 09:00:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8343b6a8608"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "236"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8343b6a8608"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 2,\n        \"user_id\": 2,\n        \"balance\": 5000,\n        \"balance_achieve\": 100000000,\n        \"created_date\": \"2019-09-19 11:47:44\",\n        \"updated_date\": \"2019-09-19 11:32:53\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User Balance",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "15000",
+									"type": "text"
+								},
+								{
+									"key": "balance_achieve",
+									"value": "1000000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://e-wallet.test/user-balance/create",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User Balance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "balance",
+											"value": "15000",
+											"type": "text"
+										},
+										{
+											"key": "balance_achieve",
+											"value": "1000000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://e-wallet.test/user-balance/create",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 04:41:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d830717d3ffc"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "443"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d830717d3ffc"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User Balance",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "balance_achieve",
+									"value": "100000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/user-balance/update/10",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance",
+								"update",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Balance",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user-balance/delete/2",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User Balance",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user-balance/delete/5",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 09:02:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d83443f8deee"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "336"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d83443f8deee"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User Balance History",
+			"item": [
+				{
+					"name": "Get User Balance History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user-balance-history/get",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance-history",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Balance History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user-balance/get-user-balance",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance",
+										"get-user-balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 04:26:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d830388f1483"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "274"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d830388f1483"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"code\": 200,\r\n    \"message\": \"Success\",\r\n    \"data\": [\r\n        {\r\n            \"id\": 1,\r\n            \"user_balance_id\": 1,\r\n            \"balance_before\": 20000,\r\n            \"balance_after\": 25000,\r\n            \"activity\": \"topup\",\r\n            \"type\": \"credit\",\r\n            \"ip\": \"1\",\r\n            \"location\": \"Yogyakarta\",\r\n            \"user_agent\": \"BNI\",\r\n            \"author\": \"admin\",\r\n            \"created_date\": \"2019-09-19 12:45:15\",\r\n            \"updated_date\": \"2019-09-19 12:44:11\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"user_balance_id\": 2,\r\n            \"balance_before\": 10000,\r\n            \"balance_after\": 5000,\r\n            \"activity\": \"transfer\",\r\n            \"type\": \"debit\",\r\n            \"ip\": \"1\",\r\n            \"location\": \"Yogyakarta\",\r\n            \"user_agent\": \"BNI\",\r\n            \"author\": \"admin\",\r\n            \"created_date\": \"2019-09-19 12:45:47\",\r\n            \"updated_date\": \"2019-09-19 12:45:48\"\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User Balance History By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user-balance-history/get/3",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance-history",
+								"get",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User Balance History By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user-balance-history/get/3",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance-history",
+										"get",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 09:03:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8344679907f"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "125"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8344679907f"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=98"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 3,\n        \"user_balance_id\": 1,\n        \"balance_before\": 25000,\n        \"balance_after\": 10000,\n        \"activity\": \"transfer\",\n        \"type\": \"debit\",\n        \"ip\": \"192.168.0.1\",\n        \"location\": \"yogyakarta\",\n        \"user_agent\": \"BNI\",\n        \"author\": \"admin\",\n        \"created_date\": \"2019-09-19 13:02:52\",\n        \"updated_date\": \"2019-09-19 13:05:59\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create User Balance History",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_balance_id\" : 2,\n\t\"balance_before\" : 25000,\n\t\"balance_after\" : 20000,\n\t\"activity\" : \"transfer\",\n\t\"type\" : \"debit\",\n\t\"ip\" : \"192.168.0.1\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\",\n\t\"author\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/user-balance-history/create",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance-history",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User Balance History",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_balance_id\" : 1,\n\t\"balance_before\" : 25000,\n\t\"balance_after\" : 20000,\n\t\"activity\" : \"transfer\",\n\t\"type\" : \"debit\",\n\t\"ip\" : \"192.168.0.1\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\",\n\t\"author\" : \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://e-wallet.test/user-balance-history/create",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance-history",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 06:04:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d831a77f3c83"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "378"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d831a77f3c83"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User Balance History",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user_balance_id\" : 1,\n\t\"balance_before\" : 200,\n\t\"balance_after\" : 1000,\n\t\"activity\" : \"transfer\",\n\t\"type\" : \"debit\",\n\t\"ip\" : \"192.168.0.1\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\",\n\t\"author\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/user-balance-history/update/3",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance-history",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Balance History",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user-balance-history/delete/2",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance-history",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete User Balance History",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "RRwHnNSyLIP6DnvXY23opGQKzJp_LyDU"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/user-balance-history/delete/3",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"user-balance-history",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Sep 2019 09:06:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d83452a271d1"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "794"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d83452a271d1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Balance Bank",
+			"item": [
+				{
+					"name": "Get Balance Bank",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank/get",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Balance Bank",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank/get",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 07:03:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8479b5bb1be"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "233"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8479b5bb1be"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"balance\": 1000000,\n            \"balance_achieve\": 10000000,\n            \"code\": \"A221\",\n            \"enable\": 1,\n            \"created_date\": \"2019-09-20 14:02:38\",\n            \"updated_date\": \"2019-09-20 14:02:39\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Balance Bank By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/user-balance/get/1",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"user-balance",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Balance Bank",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank/get",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 07:03:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8479b5bb1be"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "233"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8479b5bb1be"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"balance\": 1000000,\n            \"balance_achieve\": 10000000,\n            \"code\": \"A221\",\n            \"enable\": 1,\n            \"created_date\": \"2019-09-20 14:02:38\",\n            \"updated_date\": \"2019-09-20 14:02:39\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Balance Bank",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "balance",
+									"value": "15000",
+									"type": "text"
+								},
+								{
+									"key": "balance_achieve",
+									"value": "1000000",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "A332",
+									"type": "text"
+								},
+								{
+									"key": "enable",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank/create",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Balance Bank",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "balance",
+											"value": "15000",
+											"type": "text"
+										},
+										{
+											"key": "balance_achieve",
+											"value": "1000000",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "A332",
+											"type": "text"
+										},
+										{
+											"key": "enable",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank/create",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 07:11:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d847ba4b6089"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "321"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d847ba4b6089"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Balance Bank",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"balance\" : 200000,\n\t\"balance_achieve\" : 20000000,\n\t\"code\" : \"A667\",\n\t\"enable\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank/update/1",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Balance Bank",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank/delete/2",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Balance Bank",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank/delete/2",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 07:31:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d848058b8b44"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "255"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d848058b8b44"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Balance Bank History",
+			"item": [
+				{
+					"name": "Get Balance Bank History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank-history/get",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank-history",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Balance Bank History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank-history/get",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank-history",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 08:48:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d84925695512"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "144"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d84925695512"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"balance_bank_id\": 1,\n            \"balance_before\": 10000,\n            \"balance_after\": 20000,\n            \"activity\": \"topup\",\n            \"type\": \"credit\",\n            \"ip\": \"192.168.0.1\",\n            \"location\": \"Yogyakarta\",\n            \"user_agent\": \"BNI\",\n            \"author\": \"admin\",\n            \"created_date\": \"2019-09-20 15:48:16\",\n            \"updated_date\": \"2019-09-20 15:48:17\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Balance Bank History By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank-history/get/1",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank-history",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Balance Bank History By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank-history/get/1",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank-history",
+										"get",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 08:48:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d84926e7866c"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "369"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d84926e7866c"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 1,\n        \"balance_bank_id\": 1,\n        \"balance_before\": 10000,\n        \"balance_after\": 20000,\n        \"activity\": \"topup\",\n        \"type\": \"credit\",\n        \"ip\": \"192.168.0.1\",\n        \"location\": \"Yogyakarta\",\n        \"user_agent\": \"BNI\",\n        \"author\": \"admin\",\n        \"created_date\": \"2019-09-20 15:48:16\",\n        \"updated_date\": \"2019-09-20 15:48:17\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Balance Bank History",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"balance_bank_id\" : 1,\n\t\"balance_before\" : 25000,\n\t\"balance_after\" : 20000,\n\t\"activity\" : \"transfer\",\n\t\"type\" : \"debit\",\n\t\"ip\" : \"192.168.0.1\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\",\n\t\"author\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank-history/create",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank-history",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Balance Bank History",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"balance_bank_id\" : 1,\n\t\"balance_before\" : 25000,\n\t\"balance_after\" : 20000,\n\t\"activity\" : \"transfer\",\n\t\"type\" : \"debit\",\n\t\"ip\" : \"192.168.0.1\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\",\n\t\"author\" : \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank-history/create",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank-history",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 08:50:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d8492e2bf868"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "435"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d8492e2bf868"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Balance Bank History",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"balance_bank_id\" : 1,\n\t\"balance_before\" : 200,\n\t\"balance_after\" : 1000,\n\t\"activity\" : \"transfer\",\n\t\"type\" : \"debit\",\n\t\"ip\" : \"192.168.0.1\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\",\n\t\"author\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank-history/update/2",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank-history",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Balance Bank History",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							}
+						],
+						"url": {
+							"raw": "http://e-wallet.test/balance-bank-history/delete/2",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"balance-bank-history",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Balance Bank History",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									}
+								],
+								"url": {
+									"raw": "http://e-wallet.test/balance-bank-history/delete/2",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"balance-bank-history",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 08:53:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d849380769a8"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "494"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d849380769a8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Topup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : 10000,\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/transaction/topup",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"transaction",
+								"topup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Topup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"amount\" : 10000,\n\t\"type\" : \"topup\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://e-wallet.test/transaction/topup",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"transaction",
+										"topup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 09:41:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d849eb404f1e"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "320"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d849eb404f1e"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"type": "text",
+								"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\" : 10000,\n\t\"to\" : 2,\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://e-wallet.test/transaction/transfer",
+							"protocol": "http",
+							"host": [
+								"e-wallet",
+								"test"
+							],
+							"path": [
+								"transaction",
+								"transfer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Topup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"type": "text",
+										"value": "XIkvfA8Aj_W_Ee5F3-CV-tnBo_TDPrEQ"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"amount\" : 10000,\n\t\"type\" : \"topup\",\n\t\"location\" : \"yogyakarta\",\n\t\"user_agent\" : \"BNI\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://e-wallet.test/transaction/topup",
+									"protocol": "http",
+									"host": [
+										"e-wallet",
+										"test"
+									],
+									"path": [
+										"transaction",
+										"topup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Sep 2019 09:41:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.27 (Win32) OpenSSL/1.0.2l PHP/7.1.8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.8"
+								},
+								{
+									"key": "X-Debug-Tag",
+									"value": "5d849eb404f1e"
+								},
+								{
+									"key": "X-Debug-Duration",
+									"value": "320"
+								},
+								{
+									"key": "X-Debug-Link",
+									"value": "/debug/default/view?tag=5d849eb404f1e"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Success\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	]
+}
